@@ -1,9 +1,10 @@
-# working config for the pre soldered pro kit
 # v3.3 board kit
+# working config for the pre soldered pro kit
 
 esphome:
   name: office-air-gradient
-  platform: ESP8266
+
+esp8266:
   board: d1_mini
 
 substitutions:
@@ -21,8 +22,8 @@ api:
 ota:
   password: !secret ota_password
 
-# Adds a safe mode switch
-# https://esphome.io/components/ota.html#config-ota
+# Create a switch for safe_mode in order to flash the device
+# https://esphome.io/components/switch/safe_mode.html
 switch:
   - platform: safe_mode
     name: "Flash Mode (Safe Mode)"
