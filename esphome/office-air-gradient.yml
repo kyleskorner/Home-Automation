@@ -46,18 +46,6 @@ wifi:
 
 captive_portal:
 
-button:
-  # this is a pressable button to home assitant
-  # calibration info: 
-  - platform: template
-    name: "$title Run Calibration"
-    id: office_button
-    on_press:
-      then:
-        - senseair.background_calibration: senseair_co2
-        - delay: 120s
-        - senseair.background_calibration_result: senseair_co2
-
 i2c:
   sda: D2
   scl: D1
@@ -125,3 +113,15 @@ sensor:
       id: co2
       name: "$title SenseAir CO2 Value"
     update_interval: 30s
+
+button:
+  # this is a pressable button to home assitant
+  # calibration info: 
+  - platform: template
+    name: "$title Run Calibration"
+    id: office_button
+    on_press:
+      then:
+        - senseair.background_calibration: senseair_co2
+        - delay: 120s
+        - senseair.background_calibration_result: senseair_co2
